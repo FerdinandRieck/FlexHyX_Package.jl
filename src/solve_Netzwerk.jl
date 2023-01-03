@@ -3,7 +3,7 @@ function solveNetzwerk()
     include("DGL.jl")
     include("Glättung.jl")
     include("Leistung.jl")
-    include("Params.jl")
+    include("Paras.jl")
 
     p = A, B, K1, K2, Q_max, R, U0, soc_min
     y0 = [UL;UR;iV;iB;U_E;Q]
