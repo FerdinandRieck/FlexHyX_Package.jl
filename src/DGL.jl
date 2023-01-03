@@ -8,6 +8,7 @@ function dae!(dy,y,p,t)
 end
 
 function f_aw!(dy_alg,y_alg,ind_alg,y,P)
+    dy = 0*y
     y[ind_alg] = y_alg;
     dae!(dy,y,P,0.0)
     for i=1:length(y_alg) #-- keine Ahnung, warum das nicht mit dy_alg=dy[ind_alg] funktioniert
