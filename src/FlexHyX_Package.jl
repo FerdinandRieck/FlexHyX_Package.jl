@@ -1,5 +1,6 @@
 module FlexHyX_Package
+using LinearAlgebra, Plots, NLsolve, DifferentialEquations
 
-# Write your package code here.
+export solveNetzwerk
 
 end
