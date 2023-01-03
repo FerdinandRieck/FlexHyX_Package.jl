@@ -3,4 +3,5 @@ module FlexHyX_Package
 
     export solveNetzwerk
 
+    include("solve_Netzwerk.jl")
 end
