@@ -1,9 +1,4 @@
-include("Batterie.jl")
-include("DGL.jl")
-include("Glättung.jl")
-include("Leistung.jl")
-include("Params.jl")
-#include("plot_sol.jl")
+
 
 function solveNetzwerk()
     p = A, B, K1, K2, Q_max, R, U0, soc_min
