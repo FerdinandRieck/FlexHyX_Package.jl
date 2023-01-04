@@ -21,5 +21,5 @@ function solveNetzwerk()
     f = ODEFunction(dae!, mass_matrix = M);
     prob = ODEProblem(f,y0,tspan, p)
     sol = solve(prob)
-    plotsol(sol)
+    #plotsol(sol)
 end

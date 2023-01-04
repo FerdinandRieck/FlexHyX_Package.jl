@@ -4,4 +4,5 @@ module FlexHyX_Package
     include("solve_Netzwerk.jl")
 
     export solveNetzwerk
+    export plotsol
 end
