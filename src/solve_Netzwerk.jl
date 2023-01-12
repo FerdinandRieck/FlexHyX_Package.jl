@@ -1,4 +1,4 @@
-
+include("Params.jl")
 
 function solveNetzwerk()
     p = A, B, K1, K2, Q_max, R, U0, soc_min
@@ -12,9 +12,9 @@ function solveNetzwerk()
     res = nlsolve(g!,y_alg); y0 = [res.zero; 0.0; 0.9*Q_max]
     println(y0)
 
-    tspan = (0.0,48*60*60.0)
+    tspan = (0.0,2*24*60*60.0)
     f = ODEFunction(dae!, mass_matrix = M);
     prob = ODEProblem(f,y0,tspan, p)
-    sol = solve(prob)
-    #plotsol(sol)
+    sol = solve(prob, Rodas4P2())
+    return sol
 end
