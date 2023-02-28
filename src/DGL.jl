@@ -1,10 +1,9 @@
 function dae!(dy,y,p,t) 
     UL=y[1]; UR=y[2]; iV=y[3]; iB=y[4]; U_E=y[5]; Q=y[6];
-    dy1 = UL; 
-    dy2 = iB-iV; 
-    dy3 = iV*(UR-UL)-leistung(t)
-    dy4_6 = Batterie(UL,UR,U_E,Q,iB,p)
-    dy[:] = [dy1; dy2; dy3; dy4_6];
+    dy[1] = UL; 
+    dy[2] = iB-iV; 
+    dy[3] = iV*(UR-UL)-leistung(t)
+    dy[4:6] = Batterie!(dy[4:6],UL,UR,iB,p,U_E,Q)
 end
 
 function f_aw!(dy_alg,y_alg,ind_alg,y,P)

@@ -10,6 +10,7 @@ module FlexHyX_Package
 
     export solveNetzwerk
     export plotsol
-    export Batterie
 
+    sol = solveNetzwerk()
+    plotsol(sol)
 end

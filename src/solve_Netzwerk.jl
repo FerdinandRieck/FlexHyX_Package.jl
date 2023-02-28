@@ -6,7 +6,7 @@ function solveNetzwerk()
     M = zeros(6,6); M[5,5] = 1; M[6,6] = 1;
 
     ind_alg = findall(x->x==0,M[diagind(M)]);
-    dy = 0*y0; y_alg = copy(y0[ind_alg])
+    dy = 0.0*y0; y_alg = copy(y0[ind_alg])
     dae!(dy,y0,p,0.0);
     g!(dy_alg,y_alg) = f_aw!(dy_alg,y_alg,ind_alg,y0,p)
     res = nlsolve(g!,y_alg); y0 = [res.zero; 0.0; 0.9*Q_max]
@@ -18,3 +18,4 @@ function solveNetzwerk()
     sol = solve(prob, Rodas4P2())
     return sol
 end
+
